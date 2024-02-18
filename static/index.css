@@ -1,0 +1,276 @@
+@media screen and (orientation:portrait) {
+  html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
+
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  body {
+    margin: 0px 0px;
+    overflow-x: hidden;
+    height: 100%;
+  }
+
+
+  /*SEPARATOR*/
+  .separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 10px 10px 10px 10px;
+    font-style: italic;
+  }
+
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+  }
+
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+
+  .separator:not(:empty)::after {
+    margin-left: .25em;
+  }
+
+
+  /*MAIN PAGE*/
+
+
+  /*TOP*/
+  .topbar {
+    text-align: center;
+    height: 40px;
+    align-items: center;
+  }
+
+  .topbar h3,
+  .topbar h5 {
+    margin: 0;
+  }
+
+
+  /*LIVE*/
+  .livefeed {
+    height: auto;
+  }
+
+  .live {
+    background-color: black;
+    display: block;
+    margin: 0 auto 0 auto;
+    height: 200px;
+  }
+
+  /*CONTROLS*/
+  .livefeed-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .top,
+  .bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .midtop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .midbot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .middle label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /*STEERING*/
+  .controller-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+    width: 100%;
+  }
+
+  .controller {
+    margin: auto;
+    width: 100%;
+    height: 310px;
+  }
+
+  /*joystick*/
+  .joystick {
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    margin: 25px auto 40px auto;
+    position: relative;
+  }
+
+  .warning {
+    position: relative;
+    text-align: center;
+    font-size: large;
+  }
+
+  .warning p {
+    margin: 0px;
+  }
+
+  /*buttons*/
+  .buttons {
+    width: 310px;
+    height: 310px;
+    gap: 5px;
+    margin: 25px auto 25px auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+  }
+
+  button#left {
+    width: 100px;
+    height: 100px;
+    grid-row-start: 2;
+    grid-column-start: 1;
+  }
+
+  button#up {
+    width: 100px;
+    height: 100px;
+    grid-row-start: 1;
+    grid-column-start: 2;
+  }
+
+  button#down {
+    width: 100px;
+    height: 100px;
+    grid-row-start: 3;
+    grid-column-start: 2;
+  }
+
+  button#right {
+    width: 100px;
+    height: 100px;
+    grid-row-start: 2;
+    grid-column-start: 3;
+  }
+
+  button#stop {
+    width: 100px;
+    height: 100px;
+    grid-row-start: 2;
+    grid-column-start: 2;
+  }
+
+  button#left-cat {
+    width: 100px;
+    height: 100px;
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+
+  button#right-cat {
+    width: 100px;
+    height: 100px;
+    grid-row-start: 1;
+    grid-column-start: 3;
+  }
+
+  button#left-cat-back {
+    width: 100px;
+    height: 100px;
+    grid-row-start: 3;
+    grid-column-start: 1;
+  }
+
+  button#right-cat-back {
+    width: 100px;
+    height: 100px;
+    grid-row-start: 3;
+    grid-column-start: 3;
+  }
+
+  .buttons button {
+    text-align: center;
+    font-size: 20px
+  }
+
+  /*GALLERY*/
+  .gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (orientation:landscape) {
+
+  body {
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .topbar {
+    display: none;
+  }
+
+  .livefeed {
+    margin: 0%;
+    height: 100vh;
+    background-color: black;
+  }
+
+  .live {
+    display: block;
+    height: unset;
+    margin: 0 auto 0 auto;
+    background-color: black;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .robot-control {
+    display: none;
+  }
+ 
+  .gallery {
+    display: none;
+}
+}

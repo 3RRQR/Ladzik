@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ERROR's basic web downloader</title>
+    <meta name="description" content="version 1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='down.css') }}">
+    <link rel="stylesheet" type="text/css" href="../static/down.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favico-bl.ico') }}">
+    <link rel="icon" type="image/x-icon" href="../static/favico-bl.ico">
+</head>
+
+<body>
+    <form autocomplete="off">
+        <div class="topbar">
+            <h3>Basic Web Downloader</h3>
+            <h5>from Ladzik</h5>
+        </div>
+
+        <div class="livefeed">
+            <div class="separator">LIVEFEED</div>
+            <img class="live" src="{{ url_for('video_feed') }}" />
+        </div>
+        <div class="separator">GALLERY</div>
+        <div class="gallery">
+            <img src="{{ url_for('static', filename='1.png') }}" id="img1">
+            <img src="{{ url_for('static', filename='2.png') }}" id="img2">
+            <img src="{{ url_for('static', filename='3.png') }}" id="img3">
+            <img src="{{ url_for('static', filename='4.png') }}" id="img4">
+            <img src="{{ url_for('static', filename='5.png') }}" id="img5">
+            <img src="{{ url_for('static', filename='6.png') }}" id="img6">
+            <img src="{{ url_for('static', filename='7.png') }}" id="img7">
+            <img src="{{ url_for('static', filename='8.png') }}" id="img8">
+            <img src="{{ url_for('static', filename='9.png') }}" id="img9">
+            <img src="{{ url_for('static', filename='10.png') }}" id="img10">
+            <img src="{{ url_for('static', filename='11.png') }}" id="img11">
+            <img src="{{ url_for('static', filename='12.png') }}" id="img12">
+            <img src="{{ url_for('static', filename='13.png') }}" id="img13">
+            <img src="{{ url_for('static', filename='14.png') }}" id="img14">
+            <img src="{{ url_for('static', filename='15.png') }}" id="img15">
+            <img src="{{ url_for('static', filename='16.png') }}" id="img16">
+            <img src="{{ url_for('static', filename='17.png') }}" id="img17">
+            <img src="{{ url_for('static', filename='18.png') }}" id="img18">
+        </div>
+        <div class="separator">CONTROLLER</div>
+        <div class="controller">
+            <a href="{{ url_for('index') }}">
+                <button type="button">GO BACK (flask)</button>
+            </a>
+            <a href="index.html">
+                <button type="button">GO BACK (html)</button>
+            </a>
+        </div>
+        
+        <script src="{{ url_for('static', filename='down.js') }}"></script>
+        <script src="../static/down.js"></script>
+    </form>
+</body>
+
+</html>

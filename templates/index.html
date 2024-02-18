@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ERROR's basic web controller</title>
+    <meta name="description" content="version 1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" type="text/css" href="../static/index.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favico.ico') }}">
+    <link rel="icon" type="image/x-icon" href="../static/favico.ico">
+</head>
+
+<body>
+    <div class="topbar">
+        <h3>Basic Web Controller</h3>
+        <h5>for Ladzik</h5>
+    </div>
+
+    <div class="livefeed">
+        <div class="separator">LIVEFEED</div>
+        <img class="live" src="{{ url_for('video_feed') }}" />
+    </div>
+    <div class="robot-control">
+        <div class="separator">LIVEFEED_CONTROLS</div>
+        <div class="livefeed-controls">
+            <div class="top">
+                <label>show info:<input type="checkbox" class="info" id="info"></label>
+                <div>
+                    <label>rotate image:</label>
+                    <label>0<input type="radio" name="RT" class="rotate" checked></label>
+                    <label>90<input type="radio" name="RT" class="rotate"></label>
+                    <label>180<input type="radio" name="RT" class="rotate"></label>
+                    <label>270<input type="radio" name="RT" class="rotate"></label>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div class="middle">
+                <div class="midtop">
+                    <label>quality:<input type="range" min="1" max="3" value="2" class="quality" id="quality"></label>
+                    <label>zoom:<input type="range" min="1" max="10" value="5" class="zoom" id="zoom"></label>
+                </div>
+                <div class="midbot">
+                    <label>framerate:<input type="range" min="1" max="3" value="2" class="frames" id="frames"></label>
+                </div>
+
+            </div>
+            <div class="separator"></div>
+            <div class="bottom">
+                <button type="button" class="frame">capture frame</button>
+                <button type="button" class="video">capture video</button>
+            </div>
+
+        </div>
+        <div class="separator">CONTROLLER</div>
+        <div class="controller-type">
+            <label>type:</label>
+            <label>buttons<input type="radio" name="ST" class="ster-type" id="but-opt" checked></label>
+            <label>joystick<input type="radio" name="ST" class="ster-type" id="joy-opt"></label>
+        </div>
+
+        <div class="controller">
+
+            <div class="joystick" id="joystick" style="display: none;"></div>
+            <div class="warning" id="warning" style="display: none;">
+                <p>Uwaga! By korzystać z joysticka należy go na początku skalibrować (kliknij na błękitne pole parę
+                    razy)</p>
+            </div>
+
+            <div class="buttons" id="buttons" style="display: grid;">
+                <button class="control-button" id="up" data-button-id="up">UP</button>
+                <button class="control-button" id="down" data-button-id="down">DOWN</button>
+                <button class="control-button" id="left" data-button-id="left">LEFT</button>
+                <button class="control-button" id="right" data-button-id="right">RIGHT</button>
+                <button class="control-button" id="stop" data-button-id="stop">STOP</button>
+                <button class="control-button" id="left-cat" data-button-id="left-cat">LC</button>
+                <button class="control-button" id="right-cat" data-button-id="right-cat">RC</button>
+                <button class="control-button" id="left-cat-back" data-button-id="left-cat-back">LCB</button>
+                <button class="control-button" id="right-cat-back" data-button-id="right-cat-back">RCB</button>
+            </div>
+
+        </div>
+        <div class="separator">GALLERY</div>
+        <div class="gallery">
+            <a href="{{ url_for('down') }}">
+                <button type="button" id="download">DOWNLOAD CONTENT (flask)</button>
+            </a>
+            <a href="../templates/down.html">
+                <button type="button" id="download">DOWNLOAD CONTENT (html)</button>
+            </a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.10.1/nipplejs.min.js"></script>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+    <script src="../static/index.js"></script>
+</body>
+
+</html>
