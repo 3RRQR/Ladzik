@@ -42,8 +42,6 @@
 <p>top</p>
 <img src="photos/build9.jpg">
 <p>underneath</p>
-<img src="photos/build10.jpg">
-<p>schemat how cables are routed</p>
 
 
 <p>and after it when a computer was a raspberry pi 4 and power was comming from powerbank</p>
