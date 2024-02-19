@@ -6,7 +6,7 @@
 <li>any other microcontroller - I couldn't test it, I don't have any</li>
 </ul>
 
-<p>for creating your own Ladzik you will need:</p>
+<h5>for creating your own Ladzik you will need:</h5>
 <ul>
     <li>raspberry pi zero 2 W - main computer</li>
     <li>DFRobot Black Gladiator ROB0153 - crawler platform</li>
@@ -18,10 +18,10 @@
 <p>Additionally, you will need bare wires to connect the dc motors from the pi's HAT and a male connector to the lipo battery, in my case it was a small tamiya, but now lipo batteries come with a T-connect or even a large tamiya. Of course, you can use 18650, AA or even a powerbank, but remember that powerbanks have overload protection and if you draw too much current, the powerbank will cut off the power.</p>
 
 
-<p>some rambling about powering a Ladzik using powerbank. When doing that use USB breakout board or even bare usb plug for soldering, check what pins are 5V and ground and solder wires accordingly. that is easiest way of getting power from powerbank to pi's HAT. after that I recommend using 5V to 12V step up converter because that what is needed in pi's motor driver HAT. That will not bypass powerbank's internal overload protection but will supply 12V with 0.5A max. For more ampers you will need to enable quick charge over usb if your powerbank support's it. In short, I do not recommend powerbanks for this project at all. </p>
+<p>Some rambling about powering a Ladzik using powerbank. When doing that use USB breakout board or even bare usb plug for soldering, check what pins are 5V and ground and solder wires accordingly. That is easiest way of getting power from powerbank to pi's HAT. After that I recommend using 5V to 12V step up converter because that what is needed in pi's motor driver HAT. That will not bypass powerbank's internal overload protection but will supply 12V with 0.5A max. For more ampers you will need to enable quick charge over usb if your powerbank support's it. In short, I do not recommend powerbanks for this project at all. </p>
 
 
-<p>Here are some photos when the robot had a powerbank as power supply and without camera:</p>
+<p>Here are some photos when the robot had a powerbank as power supply, raspberry pi 4 as main computer and without camera:</p>
 <img src="photos/build1.jpg">
 <p>front</p>
 <img src="photos/build2.jpg">
@@ -44,7 +44,5 @@
 <p>underneath</p>
 
 
-<p>and after it when a computer was a raspberry pi 4 and power was comming from powerbank</p>
-
 <h2>PCA9685.py and main.py are based on/copied from code published on https://www.waveshare.com/wiki/Motor_Driver_HAT in section "Demo".</h2>
-<p>that code is for controlling HAT attachment on raspberry pi zero 2 w that drives motors of a robot.</p>
+<p>That code is for controlling HAT attachment on raspberry pi zero 2 w that drives motors of a robot.</p>
