@@ -6,9 +6,7 @@
     <meta name="description" content="version 1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
-    <link rel="stylesheet" type="text/css" href="../static/index.css">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favico.ico') }}">
-    <link rel="icon" type="image/x-icon" href="../static/favico.ico">
 </head>
 
 <body>
@@ -19,7 +17,7 @@
 
     <div class="livefeed">
         <div class="separator">LIVEFEED</div>
-        <img class="live" src="{{ url_for('video_feed') }}" />
+        <img class="live" src="{{ url_for('static', filename='video_feed.mp4') }}" />
     </div>
     <div class="robot-control">
         <div class="separator">LIVEFEED_CONTROLS</div>
@@ -85,14 +83,10 @@
             <a href="{{ url_for('down') }}">
                 <button type="button" id="download">DOWNLOAD CONTENT (flask)</button>
             </a>
-            <a href="../templates/down.html">
-                <button type="button" id="download">DOWNLOAD CONTENT (html)</button>
-            </a>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.10.1/nipplejs.min.js"></script>
     <script src="{{ url_for('static', filename='index.js') }}"></script>
-    <script src="../static/index.js"></script>
 </body>
 
 </html>
