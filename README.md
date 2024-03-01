@@ -46,14 +46,14 @@
 <p>Of course, this project is in infinite development and will change over time, but as of today I can provide lists of changes and fixes that will appear in the future:</p>
 <h2>changes:</h2>
 <ul>
-<li><h3>web controller</h3></li>
+<h3>web controller</h3>
 <li>Add functionality to buttons, switches and sliders in LIVEFEED_CONTROLS section</li>
 <li>Add functionality to Basic Web Downloader (DOWNLOAD CONTENT button on the bottom)</li>
 <li>Add filters to the camera, which can be enabled through a new section</li>
 <li>Add toggle in LIVEFEED_CONTROLS that adds time and date on camera livefeed</li>
 <li>Add settings next to DOWNLOAD CONTENT button (for example: filters and text on captured photos and videos?)</li>
 <li>Add the ability to control Ladzik using a xbox/ps controller hooked up via bluetooth (bluetooth on/off in settings)</li>
-<li><h3>Ladzik</h3></li>
+<h3>Ladzik</h3>
 <li>Make and attach 3d printed case (maybe Fiat 126p)</li>
 <li>MAYBE change motor driver board to something with better cable connectors or solder a new one</li>
 <li>Add lights on the front (LED strip on case or hat connector)</li>
@@ -66,12 +66,12 @@
 
 <h2>fixes:</h2>
 <ul>
-<li><h3>web controller</h3></li>
+<h3>web controller</h3>
 <li>Fix flickering on livefeed (PAL and NTSC switch maybe)</li>
 <li>Fix joystick error when used first time after boot (wrong values)</li>
 <li>improve responisibility of a controller</li>
 <li>much more will be added during testing</li>
-<li><h3>Ladzik</h3></li>
+<h3>Ladzik</h3>
 <li>nothing</li>
 </ul>
 
