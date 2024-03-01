@@ -21,7 +21,7 @@
 <p>Some rambling about powering a Ladzik using powerbank. When doing that use USB breakout board or even bare usb plug for soldering, check what pins are 5V and ground and solder wires accordingly. That is easiest way of getting power from powerbank to pi's HAT. After that I recommend using 5V to 12V step up converter because that what is needed in pi's motor driver HAT. That will not bypass powerbank's internal overload protection but will supply 12V with 0.5A max. For more ampers you will need to enable quick charge over usb if your powerbank support's it. In short, I do not recommend powerbanks for this project at all. </p>
 
 
-<h2>Here are some photos when the robot had a powerbank as power supply, raspberry pi 4 as main computer and without camera:</h2>
+<h3>Here are some photos when the robot had a powerbank as power supply, raspberry pi 4 as main computer and without camera:</h3>
 <img src="photos/build1.jpg">
 <p>front</p>
 <img src="photos/build2.jpg">
@@ -33,7 +33,7 @@
 <img src="photos/build5.jpg">
 <p>without powerbank</p>
 
-<h2>and here are some photos of the current state:</h2>
+<h3>and here are some photos of the current state:</h3>
 <img src="photos/build6.jpg">
 <p>front</p>
 <img src="photos/build7.jpg">
