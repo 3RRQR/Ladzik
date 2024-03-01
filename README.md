@@ -6,7 +6,7 @@
 <li>any other microcontroller - I couldn't test it, I don't have any</li>
 </ul>
 
-<h3>for creating your own Ladzik you will need:</h3>
+<h2>for creating your own Ladzik you will need:</h2>
 <ul>
     <li>raspberry pi zero 2 W - main computer</li>
     <li>DFRobot Black Gladiator ROB0153 - crawler platform</li>
@@ -21,7 +21,7 @@
 <p>Some rambling about powering a Ladzik using powerbank. When doing that use USB breakout board or even bare usb plug for soldering, check what pins are 5V and ground and solder wires accordingly. That is easiest way of getting power from powerbank to pi's HAT. After that I recommend using 5V to 12V step up converter because that what is needed in pi's motor driver HAT. That will not bypass powerbank's internal overload protection but will supply 12V with 0.5A max. For more ampers you will need to enable quick charge over usb if your powerbank support's it. In short, I do not recommend powerbanks for this project at all. </p>
 
 
-<h3>Here are some photos when the robot had a powerbank as power supply, raspberry pi 4 as main computer and without camera:</h3>
+<h2>Here are some photos when the robot had a powerbank as power supply, raspberry pi 4 as main computer and without camera:</h2>
 <img src="photos/build1.jpg">
 <p>front</p>
 <img src="photos/build2.jpg">
@@ -33,7 +33,7 @@
 <img src="photos/build5.jpg">
 <p>without powerbank</p>
 
-<h3>and here are some photos of the current state:</h3>
+<h2>and here are some photos of the current state:</h2>
 <img src="photos/build6.jpg">
 <p>front</p>
 <img src="photos/build7.jpg">
@@ -43,7 +43,37 @@
 <img src="photos/build9.jpg">
 <p>underneath</p>
 
+<p>Of course, this project is in infinite development and will change over time, but as of today I can provide lists of changes and fixes that will appear in the future:</p>
+<h2>changes:</h2>
+<ul>
+<li><h3>web controller</h3></li>
+<li>Add functionality to buttons, switches and sliders in LIVEFEED_CONTROLS section</li>
+<li>Add functionality to Basic Web Downloader (DOWNLOAD CONTENT button on the bottom)</li>
+<li>Add filters to the camera, which can be enabled through a new section</li>
+<li>Add toggle in LIVEFEED_CONTROLS that adds time and date on camera livefeed</li>
+<li>Add settings next to DOWNLOAD CONTENT button (for example: filters and text on captured photos and videos?)</li>
+<li>Add the ability to control Ladzik using a xbox/ps controller hooked up via bluetooth (bluetooth on/off in settings)</li>
+<li><h3>Ladzik</h3></li>
+<li>Make and attach 3d printed case (maybe Fiat 126p)</li>
+<li>MAYBE change motor driver board to something with better cable connectors or solder a new one</li>
+<li>Add lights on the front (LED strip on case or hat connector)</li>
+<li>Add a proximity sensor</li>
+<li>change the lipo battery to 2x 18650 and add a BMS to see how much power is left</li>
+
+
+
+</ul>
+
+<h2>fixes:</h2>
+<ul>
+<li><h3>web controller</h3></li>
+<li>Fix flickering on livefeed (PAL and NTSC switch maybe)</li>
+<li>Fix joystick error when used first time after boot (wrong values)</li>
+<li>improve responisibility of a controller</li>
+<li>much more will be added during testing</li>
+<li><h3>Ladzik</h3></li>
+<li>nothing</li>
+</ul>
 
 <h2>PCA9685.py and main.py are based on/copied from code published on https://www.waveshare.com/wiki/Motor_Driver_HAT in section "Demo".</h2>
 <p>That code is for controlling HAT attachment on raspberry pi zero 2 w that drives motors of a robot.</p>
-<p>test<p>
