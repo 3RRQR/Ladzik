@@ -140,12 +140,6 @@
     position: relative;
   }
 
-  .warning {
-    position: relative;
-    text-align: center;
-    font-size: large;
-  }
-
   .warning p {
     margin: 0px;
   }

@@ -6,9 +6,7 @@
     <meta name="description" content="version 1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='down.css') }}">
-    <link rel="stylesheet" type="text/css" href="../static/down.css">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favico-bl.ico') }}">
-    <link rel="icon" type="image/x-icon" href="../static/favico-bl.ico">
 </head>
 
 <body>
@@ -46,15 +44,11 @@
         <div class="separator">CONTROLLER</div>
         <div class="controller">
             <a href="{{ url_for('index') }}">
-                <button type="button">GO BACK (flask)</button>
-            </a>
-            <a href="index.html">
-                <button type="button">GO BACK (html)</button>
+                <button type="button">GO BACK</button>
             </a>
         </div>
         
         <script src="{{ url_for('static', filename='down.js') }}"></script>
-        <script src="../static/down.js"></script>
     </form>
 </body>
 
