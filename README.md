@@ -69,6 +69,7 @@
 <h3>web controller</h3>
 <li>Fix flickering on livefeed (PAL and NTSC switch maybe)</li>
 <li>Fix joystick error when used first time after boot (wrong values)</li>
+<li>fix livefeed error when browser is refreshed/new connection is made</li>
 <li>improve responisibility of a controller</li>
 <li>much more will be added during testing</li>
 <h3>Ladzik</h3>
