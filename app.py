@@ -138,33 +138,6 @@ def JoystickUpdate():
 
     return jsonify({'status': 'success'})
 
-    
-#   LIVEFEED CONTROLS
-
-
-#checkboxes
-@app.route('/chckbox', methods=['POST'])
-def checkboxes():
-    data = request.get_json()
-    showInfo = data.get("showInfo")
-    rotation = data.get("rotation")
-
-    print("CHECKBOXES", showInfo, rotation)
-
-    return jsonify({'status': 'success'})
-
-
-#sliders
-@app.route('/sliders', methods=['POST'])
-def sliders():
-    data = request.get_json()
-    quality = data.get("quality")
-    zoom = data.get("zoom")
-    frames = data.get("frames")
-
-    print("SLIDERS", quality, zoom, frames)
-
-    return jsonify({'status': 'success'})
 
 
 if __name__ == '__main__':

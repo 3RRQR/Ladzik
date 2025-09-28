@@ -4,54 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const joystickRadio = document.getElementById('joy-opt')
     const butt = document.getElementById('buttons')
     const joys = document.getElementById('joystick')
-    const warn = document.getElementById('warning')
 
     buttonsRadio.addEventListener('change', function () {
         butt.style.display = 'grid';
         joys.style.display = 'none';
-        warn.style.display = 'none';
     });
 
     joystickRadio.addEventListener('change', function () {
         butt.style.display = 'none';
         joys.style.display = 'flex';
-        warn.style.display = 'block';
     });
-
-    //camera sliders
-    const qualitySlider = document.getElementById('quality')
-    const zoomSilder = document.getElementById('zoom')
-
-    qualitySlider.addEventListener('input', (event) => {
-        const Qvalue = event.target.value;
-        
-        fetch('/sliders', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({quality: Qvalue }),
-        })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error('Error:', error));
-    })
-
-    zoomSilder.addEventListener('input', (event) => {
-        const Zvalue = event.target.value;
-        
-        fetch('/sliders', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({zoom: Zvalue }),
-        })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error('Error:', error));
-    })
-
 
     //buttons
     const buttons = document.querySelectorAll('.control-button');
@@ -132,4 +94,5 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error('Error:', error));
 
     });
+
 });

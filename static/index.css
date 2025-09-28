@@ -252,6 +252,7 @@
   .live {
     display: block;
     height: unset;
+    width:100vw;
     margin: 0 auto 0 auto;
     background-color: black;
   }
