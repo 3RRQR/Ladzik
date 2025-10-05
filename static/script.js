@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //buttons
     const buttons = document.querySelectorAll('.control-button');
+    const speed = document.getElementById('speed')
 
     buttons.forEach(button => {
         button.addEventListener('mousedown', function () {
@@ -40,6 +41,19 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => console.log(data))
             .catch(error => console.error('Error:', error));
     }
+
+    speed.addEventListener('input', (event) => {
+        fetch('/speed', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ speed: event.target.value }),
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+    })
 
     //joystick
     var joystick = nipplejs.create({

@@ -68,6 +68,14 @@ def index():
 
 
 #   STEERING
+@app.route('/speed', methods=['POST'])
+def speedUpdate():
+    data = request.get_json()
+    speed = int(data.get('speed'))
+    print(speed * 10)
+    
+    return jsonify({'status': 'success'})
+
 
 @app.route('/buttons', methods=['POST'])
 def buttonsUpdate():
@@ -75,6 +83,7 @@ def buttonsUpdate():
     button = data.get('button')
     is_pressed = data.get('isPressed')
     button_states[button] = is_pressed
+    
 
     if button == "up":
         drive.forward(100)
@@ -102,35 +111,48 @@ def buttonsUpdate():
 @app.route('/joystick', methods=['POST'])
 def JoystickUpdate():
     data = request.get_json()
-    posX = round(data.get("x") * 2)
-    posY = round(data.get("y") * -2)
-    turnspeed = 0
+    x = data.get("x", 0.0)
+    y = data.get("y", 0.0)
 
-    if abs(posY) - abs(posX) > 0:
-        turnspeed = abs(posY) - abs(posX)
+    x = max(-1, min(1, x))
+    y = max(-1, min(1, -y))
 
-    if posX < 0 and posY > 0:
-        Motor.MotorRun(0, 'forward', turnspeed)
-        Motor.MotorRun(1, 'forward', posY)
-    elif posX > 0 and posY > 0:
-        Motor.MotorRun(0, 'forward', posY)
-        Motor.MotorRun(1, 'forward', turnspeed)
-    elif posX < 0 and posY < 0:
-        Motor.MotorRun(0, 'backward', turnspeed)
-        Motor.MotorRun(1, 'backward', abs(posY))
-    elif posX > 0 and posY < 0:
-        Motor.MotorRun(0, 'backward', abs(posY))
-        Motor.MotorRun(1, 'backward', turnspeed)
-    elif -20 < posX < 20 and posY > 0:
-        drive.forward(posY)
-    elif -20 < posX < 20 and posY < 0:
-        drive.backward(abs(posY))
-    elif posX < 0 and -20 < posY < 20:
-        drive.left(abs(posX))
-    elif posX > 0 and -20 < posY < 20:
-        drive.right(abs(posX))
 
-    if posX == 0 and posY == 0:
+    MAX_SPEED = 100
+    DEAD_ZONE = 0.1
+    SCALE = 2
+
+
+    if abs(x) < DEAD_ZONE: x = 0
+    if abs(y) < DEAD_ZONE: y = 0
+
+
+    left = y + x
+    right = y - x
+
+
+    max_val = max(abs(left), abs(right), 1)
+    left /= max_val
+    right /= max_val
+
+
+    left_speed = int(left * MAX_SPEED / SCALE)
+    right_speed = int(right * MAX_SPEED / SCALE)
+
+
+    def set_motor(motor_id, speed):
+        if speed > 0:
+            Motor.MotorRun(motor_id, 'forward', abs(speed))
+        elif speed < 0:
+            Motor.MotorRun(motor_id, 'backward', abs(speed))
+        else:
+            Motor.MotorStop(motor_id)
+
+    set_motor(0, left_speed)
+    set_motor(1, right_speed)
+
+
+    if x == 0 and y == 0:
         Motor.MotorStop(0)
         Motor.MotorStop(1)
 
