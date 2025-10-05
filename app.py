@@ -70,15 +70,16 @@ def index():
 #   STEERING
 @app.route('/speed', methods=['POST'])
 def speedUpdate():
+    global speed
     data = request.get_json()
-    speed = int(data.get('speed'))
-    print(speed * 10)
+    speed = int(data.get('speed')) * 10
     
     return jsonify({'status': 'success'})
 
 
 @app.route('/buttons', methods=['POST'])
 def buttonsUpdate():
+    global speed
     data = request.get_json()
     button = data.get('button')
     is_pressed = data.get('isPressed')
@@ -86,21 +87,21 @@ def buttonsUpdate():
     
 
     if button == "up":
-        drive.forward(100)
+        drive.forward(speed)
     elif button == "down":
-        drive.backward(100)
+        drive.backward(speed)
     elif button == "left":
-        drive.left(100)
+        drive.left(speed)
     elif button == "right":
-        drive.right(100)
+        drive.right(speed)
     elif button == "left-cat":
-        drive.leftAlt(100)
+        drive.leftAlt(speed)
     elif button == "right-cat":
-        drive.rightAlt(100)
+        drive.rightAlt(speed)
     elif button == "left-cat-back":
-        drive.leftAltBack(100)
+        drive.leftAltBack(speed)
     elif button == "right-cat-back":
-        drive.rightAltBack(100)
+        drive.rightAltBack(speed)
 
     if button == "stop" or is_pressed is False:
         drive.stop()
@@ -111,51 +112,13 @@ def buttonsUpdate():
 @app.route('/joystick', methods=['POST'])
 def JoystickUpdate():
     data = request.get_json()
-    x = data.get("x", 0.0)
-    y = data.get("y", 0.0)
+    x = data.get("x")
+    y = data.get("y")
+    startx = data.get("startx")
+    starty = data.get("starty")
 
-    x = max(-1, min(1, x))
-    y = max(-1, min(1, -y))
-
-
-    MAX_SPEED = 100
-    DEAD_ZONE = 0.1
-    SCALE = 2
-
-
-    if abs(x) < DEAD_ZONE: x = 0
-    if abs(y) < DEAD_ZONE: y = 0
-
-
-    left = y + x
-    right = y - x
-
-
-    max_val = max(abs(left), abs(right), 1)
-    left /= max_val
-    right /= max_val
-
-
-    left_speed = int(left * MAX_SPEED / SCALE)
-    right_speed = int(right * MAX_SPEED / SCALE)
-
-
-    def set_motor(motor_id, speed):
-        if speed > 0:
-            Motor.MotorRun(motor_id, 'forward', abs(speed))
-        elif speed < 0:
-            Motor.MotorRun(motor_id, 'backward', abs(speed))
-        else:
-            Motor.MotorStop(motor_id)
-
-    set_motor(0, left_speed)
-    set_motor(1, right_speed)
-
-
-    if x == 0 and y == 0:
-        Motor.MotorStop(0)
-        Motor.MotorStop(1)
-
+    print(x, y, startx, starty)
+   
     return jsonify({'status': 'success'})
 
 

@@ -133,9 +133,7 @@
 
   /*joystick*/
   .joystick {
-    width: 200px;
-    height: 200px;
-    background-color: lightblue;
+    height: 100%;
     margin: 25px auto 40px auto;
     position: relative;
   }

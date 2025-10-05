@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const buttonsRadio = document.getElementById('but-opt')
     const joystickRadio = document.getElementById('joy-opt')
     const butt = document.getElementById('buttons')
-    const joys = document.getElementById('joystick')
+    const joys = document.getElementById('joystick-zone')
 
     buttonsRadio.addEventListener('change', function () {
         butt.style.display = 'grid';
@@ -57,21 +57,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //joystick
     var joystick = nipplejs.create({
-        zone: document.getElementById('joystick'),
+        zone: document.getElementById('joystick-zone'),
         mode: 'static',
         position: { left: '50%', top: '50%' },
         color: 'black',
         restJoystick: true,
         shape: 'square',
         dynamicPage: true,
-        size: '100',
+        size: '200',
     });
 
     let joyMoveCounter = 0;
 
     joystick.on('move', function (evt, nipple) {
         x = nipple.position.x - startx;
-        y = nipple.position.y - starty;
+        y = (nipple.position.y - starty) * -1;
 
         joyMoveCounter++;
 
