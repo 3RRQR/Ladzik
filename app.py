@@ -80,6 +80,7 @@ def speedUpdate():
 @app.route('/buttons', methods=['POST'])
 def buttonsUpdate():
     global speed
+    speed = 100
     data = request.get_json()
     button = data.get('button')
     is_pressed = data.get('isPressed')

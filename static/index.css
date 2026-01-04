@@ -138,10 +138,6 @@
     position: relative;
   }
 
-  .warning p {
-    margin: 0px;
-  }
-
   /*buttons*/
   .buttons {
     width: 310px;
@@ -229,6 +225,20 @@
     grid-column-start: 1;
     writing-mode: vertical-lr;
     direction: rtl;
+  }
+
+  /*controller*/
+  .ext-controller {
+    height: 100%;
+    margin: 25px auto 40px auto;
+    position: relative;
+  }
+
+  .bluetooth-list {
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    background-color: lightgray;
   }
 
   /*GALLERY*/

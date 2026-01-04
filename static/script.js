@@ -2,17 +2,27 @@ document.addEventListener("DOMContentLoaded", function () {
     //change controller type
     const buttonsRadio = document.getElementById('but-opt')
     const joystickRadio = document.getElementById('joy-opt')
+    const controllerRadio = document.getElementById('ctr-opt')
     const butt = document.getElementById('buttons')
     const joys = document.getElementById('joystick-zone')
+    const cont = document.getElementById('controller-controls')
 
     buttonsRadio.addEventListener('change', function () {
         butt.style.display = 'grid';
         joys.style.display = 'none';
+        cont.style.display = 'none';
     });
 
     joystickRadio.addEventListener('change', function () {
         butt.style.display = 'none';
         joys.style.display = 'flex';
+        cont.style.display = 'none';
+    });
+
+    controllerRadio.addEventListener('change', function () {
+        butt.style.display = 'none';
+        joys.style.display = 'none';
+        cont.style.display = 'flex';
     });
 
     //buttons
@@ -108,5 +118,12 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error('Error:', error));
 
     });
+
+    //controller
+    const bllist = document.getElementById('list')
+    
+    on('blupdate', function (content){
+        bllist.innerText = content;
+    })
 
 });

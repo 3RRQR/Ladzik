@@ -55,6 +55,7 @@
             <label>type:</label>
             <label>buttons<input type="radio" name="ST" class="ster-type" id="but-opt" checked></label>
             <label>joystick<input type="radio" name="ST" class="ster-type" id="joy-opt"></label>
+            <label>ext controller<input type="radio" name="ST" class="ster-type" id="ctr-opt"></label>
         </div>
 
         <div class="controller">
@@ -73,6 +74,15 @@
                 <button class="control-button" id="right-cat-back" data-button-id="right-cat-back">RCB</button>
                 <input type="range" min="5" max="10" value="6" class="speed" id="speed">
             </div>
+
+            <div class="ext-controller" id="controller-controls" style="display: none;">
+                <label>bluetooth on<input type="checkbox" class="bluetooth-on"></label>
+                <div class="bluetooth-list" id="bl-list">
+                    <p id="list">bluetooth devices...</p>
+                </div>
+            </div>
+
+
 
         </div>
         <div class="separator">GALLERY</div>
