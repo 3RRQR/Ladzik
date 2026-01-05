@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     controllerRadio.addEventListener('change', function () {
         butt.style.display = 'none';
         joys.style.display = 'none';
-        cont.style.display = 'flex';
+        cont.style.display = 'grid';
     });
 
     //buttons
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //controller
     const bllist = document.getElementById('list')
     
-    on('blupdate', function (content){
+    bllist.on('blupdate', function (content){
         bllist.innerText = content;
     })
 

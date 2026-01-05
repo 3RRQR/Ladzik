@@ -223,22 +223,47 @@
     grid-row-start: 1;
     grid-row-end: 4;
     grid-column-start: 1;
+    margin: 0;
     writing-mode: vertical-lr;
     direction: rtl;
   }
 
-  /*controller*/
+  /*ext controller*/
   .ext-controller {
     height: 100%;
     margin: 25px auto 40px auto;
     position: relative;
+    justify-content: space-around;
   }
 
   .bluetooth-list {
+    grid-column-start: 1;
+    width: 245px;
     border-width: 1px;
-    border-color: black;
+    border-color: ButtonBorder;
     border-style: solid;
-    background-color: lightgray;
+    background-color: ButtonFace;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .bluetooth-list p {
+    margin: 0;
+  }
+
+  .bluetooth-info {
+    grid-column-start: 2;
+    width: 245px;
+    text-align: center;
+    border-width: 1px;
+    border-color: ButtonBorder;
+    border-style: solid;
+    background-color: ButtonFace;
+    border-radius: 4px;
+  }
+
+  .bluetooth-info p {
+    margin: 0;
   }
 
   /*GALLERY*/

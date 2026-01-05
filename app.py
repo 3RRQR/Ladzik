@@ -5,7 +5,6 @@ import picamera2
 from picamera2.encoders import JpegEncoder
 from picamera2.outputs import FileOutput
 from libcamera import Transform
-
 from main import driving, MotorDriver
 
 app = Flask(__name__)
